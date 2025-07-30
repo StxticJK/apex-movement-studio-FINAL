@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/scripts.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/settings.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/scripts",
+      "dest": "/api/scripts.js"
+    },
+    {
+      "src": "/api/settings",
+      "dest": "/api/settings.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
